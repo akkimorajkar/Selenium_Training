@@ -5,7 +5,7 @@ import org.openqa.selenium.interactions.Actions;
 
 import javax.swing.*;
 
-public class Mouse_Movement_Action {
+public class Mouse_Movement_Using_Action {
 
 
     public static WebDriver driver;

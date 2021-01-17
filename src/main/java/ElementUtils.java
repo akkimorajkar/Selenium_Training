@@ -1,7 +1,10 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,7 +37,18 @@ public class ElementUtils  {
 
     }
 
-    public void doClick(By locator){
+    public void actionSendKeys(By Locator, String value) {
+
+        WebElement element = getElement(Locator);
+
+        Actions action = new Actions(driver);
+
+        action.sendKeys(element, value).perform();
+
+    }
+
+
+        public void doClick(By locator){
 
         getElement(locator).click();
 
@@ -170,6 +184,19 @@ public class ElementUtils  {
         }
     }
 
+
+/*     Wait UTils */
+
+    public WebElement exp_Wait(int wait_Seconds, By locator){
+
+        WebDriverWait wait = new WebDriverWait(driver,wait_Seconds);
+
+        WebElement newElement = wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+
+        return newElement;
+
+
+    }
 }
 
      /*Create Webelement + actions (sendKeys,click,get text)
@@ -231,6 +258,5 @@ public class ElementUtils  {
             System.out.println(attribute);
 
         }*/
-
 
 
