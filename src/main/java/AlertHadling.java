@@ -28,11 +28,11 @@ public class AlertHadling {
 
         Alert alert = driver.switchTo().alert();
 
-        Thread.sleep(2000);
+        Thread.sleep(2000);                                                                                                                                                                                                                                                                     
 
         alert.accept();
 
-        driver.switchTo().defaultContent(); // to get back on tha page fromm Alert window
+        driver.switchTo().defaultContent(); // to get back on the page fromm Alert window
 
     }
 
